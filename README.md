@@ -10,10 +10,11 @@ The source code is fully commented to share what has been learned and the progre
 .
 ├── Cargo.lock
 ├── Cargo.toml
+├── README.md
 └── src
     ├── client.rs
-    ├── main.rs
-    └── README.md
+    └── main.rs
+
 ```
 ## Clone this repository on your local machine:
 
