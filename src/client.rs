@@ -1,6 +1,7 @@
 // client.rs
 use std::io;
-use uuid::Uuid; // Añade esta línea para importar Uuid
+use rusqlite::{Connection, Result};
+use uuid::Uuid; //importar Uuid
 
 pub struct Client {
     pub id: Uuid,
@@ -37,4 +38,33 @@ impl Client {
             age,
         }
     }
+}
+
+pub fn guardar_en_base_de_datos(conn: &Connection) -> Result<()> {
+    // Crear una tabla si no existe
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS clients (
+            id TEXT PRIMARY KEY,
+            name TEXT,
+            email TEXT,
+            age INTEGER
+        )",
+        [],
+    )?;
+
+    // Agregar un nuevo cliente a la base de datos
+    let new_client = Client::create_client();
+    conn.execute(
+        "INSERT INTO clients (id, name, email, age) VALUES (?, ?, ?, ?)",
+        [
+            &new_client.id.to_string(),
+            &new_client.name,
+            &new_client.email,
+            &(new_client.age.to_string()), // Convierte age a i32 para que sea compatible con INTEGER en SQLite
+        ],
+    )?;
+
+    // Otras operaciones con el cliente, si es necesario
+
+    Ok(()) // Retornamos Result para indicar que todo está bien
 }

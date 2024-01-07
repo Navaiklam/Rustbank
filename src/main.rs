@@ -40,33 +40,10 @@ fn main() -> Result<()> {
             println!("Elegiste la Opción 1");
             let conn = Connection::open("clientes.db")?;
 
-            // Crear una tabla si no existe
-            conn.execute(
-                "CREATE TABLE IF NOT EXISTS clients (
-                    id TEXT PRIMARY KEY,
-                    name TEXT,
-                    email TEXT,
-                    age INTEGER
-                )",
-                [],
-            )?;
-        
-            // Agregar un nuevo cliente a la base de datos
-            let new_client = client::Client::create_client();
-            conn.execute(
-                "INSERT INTO clients (id, name, email, age) VALUES (?, ?, ?, ?)",
-                [
-                    &new_client.id.to_string(),
-                    &new_client.name,
-                    &new_client.email,
-                    &(new_client.age.to_string()), // Convierte age a i32 para que sea compatible con INTEGER en SQLite
-                ],
-            )?;
-
-            // Otras operaciones con el cliente, si es necesario
-
-            Ok(()) // Retornamos Result para indicar que todo está bien
+            client::guardar_en_base_de_datos(&conn)?;
+            Ok(())
         }
+
         _ => {
             println!("Opción no válida");
             Ok(()) // Retornamos Result para indicar que todo está bien
