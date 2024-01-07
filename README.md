@@ -7,7 +7,7 @@ The source code is fully commented to share what has been learned and the progre
 Installation
 
 ## File structure
-'''text
+```text
 .
 ├── Cargo.lock
 ├── Cargo.toml
@@ -15,7 +15,7 @@ Installation
     ├── client.rs
     ├── main.rs
     └── README.md
-'''
+```
 ## Clone this repository on your local machine:
 
 ```bash
