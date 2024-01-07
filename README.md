@@ -4,7 +4,6 @@
 **Welcome to Crypto Bank**, a sample application for managing pretend bank accounts and fake money transactions.
 
 The source code is fully commented to share what has been learned and the progress made.
-Installation
 
 ## File structure
 ```text
