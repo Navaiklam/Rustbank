@@ -19,7 +19,7 @@ Installation
 ## Clone this repository on your local machine:
 
 ```bash
-git clone https://github.com/your-username/crypto_bank.git
+git clone https://github.com/Navaiklam/Rustbank.git
 ```
 
 | Interesting | links |
