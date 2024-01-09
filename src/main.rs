@@ -44,9 +44,16 @@ fn main() -> Result<()> {
             Ok(())
         }
 
+        2 => {
+            println!("Elegiste la Opción 1");
+            println!("Opción Dos");
+            Ok(())
+        }
+
         _ => {
             println!("Opción no válida");
             Ok(()) // Retornamos Result para indicar que todo está bien
         }
     }
 }
+
