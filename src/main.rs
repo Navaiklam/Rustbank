@@ -1,6 +1,6 @@
 // Importamos el módulo 'io' del paquete estándar de Rust para manejar la entrada/salida
 use std::io;
-
+// Testiamos git and github en Arch que todo este correcto, nuevo commit
 // Importamos el módulo 'client' que contiene la definición del cliente
 mod client;
 use rusqlite::{Connection, Result};
