@@ -1,5 +1,4 @@
 // client.rs
-
 // Importamos el módulo 'io' del paquete estándar de Rust para manejar la entrada/salida
 use std::io;
 // Importamos el módulo 'Connection' y 'Result' de la biblioteca 'rusqlite'
@@ -62,7 +61,6 @@ pub fn guardar_en_base_de_datos(conn: &Connection) -> Result<()> {
 
     // Creamos un nuevo cliente utilizando la función 'create_client' del módulo 'client'
     let new_client = Client::create_client();
-
     // Insertamos el nuevo cliente en la tabla 'clients' de la base de datos
     conn.execute(
         "INSERT INTO clients (id, name, email, age) VALUES (?, ?, ?, ?)",
@@ -74,9 +72,7 @@ pub fn guardar_en_base_de_datos(conn: &Connection) -> Result<()> {
         ],
     )?;
     // La interrogación (?) al final indica que estamos manejando errores utilizando el mecanismo Result
-
     // Puedes realizar otras operaciones con el cliente aquí, si es necesario
-
     // Retornamos Result con Ok(()) para indicar que todo se ejecutó correctamente
     Ok(())
 }

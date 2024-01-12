@@ -13,7 +13,7 @@ fn main() -> Result<()> {
     usersrt = "Malkov";
     // Imprimimos el valor de la variable
     println!("{usersrt}");
-
+    
     // Nuestra variable crística se creará siempre de esta forma. O es que es todo crítico. xD
     // Creamos una cadena de texto dinámica (String) con un contenido específico
     let usrt: String = String::from("String con longitud total del string pasado");
